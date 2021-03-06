@@ -30,3 +30,8 @@ root = true
 [*]
 end_of_line = crlf
 insert_final_newline = true
+
+# Use a 4 character wide TAB to indent '*.json' files.
+[*.json]
+indent_size = 4
+indent_style = tab
