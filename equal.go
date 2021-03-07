@@ -37,3 +37,12 @@ func EqualTypes(t utCase, tName string, expected, actual interface{}) {
 			reflect.TypeOf(actual))
 	}
 }
+
+// Equal fails t when expected is NOT equal to actual.
+func Equal(t utCase, tName string, expected, actual interface{}) {
+	EqualTypes(t, tName, expected, actual)
+
+	if expected != actual {
+		t.Fatalf("\nUT Name:  %v\nExpected: %v\nActual:   %v", tName, expected, actual)
+	}
+}
